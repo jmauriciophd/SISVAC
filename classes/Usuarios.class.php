@@ -1,10 +1,13 @@
 <?php
-class Pessoa{
+class Usuarios{
     private $nome;
     private $cpf;
     private $matricula;
     private $idade;
+            
+    public function __construct(){        
 
+    }
     public function setNome($nome){
         $this->nome = $nome;
     }
@@ -23,10 +26,10 @@ class Pessoa{
     public function getIdade(){
             return $this->idade;
     }
-    public function  setMatrucla($matricula){
+    public function  setMatricula($matricula){
         $this->matricula = $matricula;
     }
     public function getMatricula(){
             return $this->matricula;
-    }
+    }    
 }

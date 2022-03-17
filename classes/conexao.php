@@ -1,14 +1,10 @@
 <?php
 class Conexao{
-    function __construct(){
-
-        $dsn = 'mysql:dbname=dbsicvac;host=localhost';
+     protected $dbh;
+    public function __construct(){        
+        $pdo = 'mysql:dbname=dbsisvac;host=localhost';
         $user = 'root';
         $password = '';        
-        
-        $dbh = new PDO($dsn, $user, $password);
-        return $dbh;
-    }
-    
-    
+        return $this->dbh= new PDO($pdo, $user, $password);        
+    } 
 }

@@ -3544,7 +3544,7 @@ textarea.form-control-lg {
   text-align: left;
   list-style: none;
   background-color: #fff;
-  background-clip: padding-box;
+ 
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
 }
@@ -5394,6 +5394,7 @@ textarea.form-control-lg {
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   opacity: 0.25;
 }
@@ -5409,6 +5410,7 @@ textarea.form-control-lg {
   pointer-events: auto;
   background-color: rgba(255, 255, 255, 0.85);
   background-clip: padding-box;
+  -webkit-background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
@@ -5511,7 +5513,7 @@ textarea.form-control-lg {
   width: 100%;
   pointer-events: auto;
   background-color: #fff;
-  background-clip: padding-box;
+
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
   outline: 0;
