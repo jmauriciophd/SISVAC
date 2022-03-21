@@ -1,9 +1,6 @@
 <?php
 ini_set('display_errors', 1);
-define("URL","localhost");
-include_once 'classes/DAO/PessoaDao.php';
-require_once 'Controllers/indexController.php';   
-
-
+require 'environment.php';
+define('BASE_URL',"http://10.16.0.145:8080/STJVAC/");
 
 

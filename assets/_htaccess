@@ -1,0 +1,3 @@
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_FILENAME} \.pdf$
+RewriteRule ^(.*)$ http://localhost/redesocial/$1 [L]

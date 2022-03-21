@@ -1,0 +1,16 @@
+<h1>Nada foi encontrado no servidor</h1>
+<div id="msg"></div>
+<script type="text/javascript">	
+	var tempo = 10;	
+  setInterval(function(){
+		 if(tempo >0){
+		 	 tempo = tempo-1;
+		 	document.getElementById('msg').innerHTML = "Voce será redirecionado em "+tempo+" segundos";
+		 	if(tempo==0){	
+		 		document.write("<?php unset($_SESSION['lgaluno']);?>")
+			window.location.href = 'home';				
+	}
+		 }
+		},tempo);
+	
+</script>
