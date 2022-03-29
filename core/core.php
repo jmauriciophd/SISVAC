@@ -2,10 +2,8 @@
   class Core{
    	public function run(){
   		$url = explode("index.php", $_SERVER['PHP_SELF']);
-
   		$url = end($url);
   		$params = array();
-
   		if(!empty($url)){
   			$url = explode('/',$url);
   			array_shift($url);
@@ -24,7 +22,7 @@
   				$params = $url;
   			}
   		}else{
-  			$currentController = 'indexController';
+  			$currentController = 'homeController';
   			$currentAction = 'index';
   		}  		 	
      	require_once 'core/controller.php';       

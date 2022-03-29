@@ -1,22 +1,30 @@
-
 <html>
-    <head><title>💧 Sistema de Vacinas do STJ 💧</title>
-		<!--Custom styles-->
-		
+    <head><title>💧 Sistema de Vacinas💧</title>
+		<!--Custom styles-->		
 	<!--Bootsrap 4 CDN-->
+	html>
+<head>
+    <title>💧 Sistema de Vacinas do STJ 💧</title>
+	<link rel="stylesheet" href="<?= BASE_URL ?>/css/style.css">
+	<link rel="stylesheet" href="<?= BASE_URL ?>/css/bootstrap.css">
+	<script src="<?= BASE_URL ?>/js/scripts.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
     <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
 <div class="container">
 	<div class="d-flex justify-content-center h-10 mt-3" >
 		<div class="card">
 			<div class="card-body">
-            <nav>  
-                 <span class="barra-superior" ><h2>SISVAC-SISTEMA DE VACINAS STJ</h2></span></nav>
+                 <span class="barra-superior" ><h2>SISVAC-SISTEMA DE VACINAS</h2></span>
+				<span>
+					<?php if(!empty($msg)){?>
+					<div class="alert alert-danger" role="alert">
+					  <?php echo $msg; ?>
+					</div>
+					<?php }?>
+					</span>
 				<form method="post" action="">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
@@ -40,4 +48,5 @@
 </div>
 </body>
 </html>
+
 

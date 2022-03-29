@@ -5,6 +5,10 @@ class Conexao{
         $pdo = 'mysql:dbname=dbsisvac;host=localhost';
         $user = 'root';
         $password = '';        
-        return $this->dbh= new PDO($pdo, $user, $password);        
+        try{
+            return $this->dbh= new PDO($pdo, $user, $password); 
+        }catch(PDOException $e){
+            echo "Erro na conexao".$e->getMessage();
+        }   
     } 
 }

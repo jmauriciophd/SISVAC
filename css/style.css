@@ -1,5 +1,5 @@
 .barra-superior h2{
-    color: #0d6efd;
+    color: #ffffff;
 }
 .btsalvar{
     visibility:hidden;
@@ -11,12 +11,7 @@ html,body{
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
-    }
-    
-    .container{
-    height: 100%;
-    align-content: center;
-    }
+}
     
     .card{
     height: 370px;
@@ -52,7 +47,7 @@ html,body{
     background-color: #FFC312;
     color: black;
     border:0 !important;
-    }
+       }
     
     input:focus{
     outline: 0 0 0 0  !important;
