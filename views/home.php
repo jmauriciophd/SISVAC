@@ -1,11 +1,14 @@
 <?php include_once 'header.php'; ?>
 
 <div class="container ml-1 px-2 p-3 bg-white ">
-            <form action="" method="post" enctype="multipart/form">
-                    <select class="form-control" name="">
+         <form action="" method="post" enctype="multipart/form">
+                    <select class="form-control" name="local">
                         <option value="">Selecione o local de vacinação</option>
-                        
-                    </select>
+                        <?php global $localVacinado; if (!empty($local_vacina)) : foreach ($local_vacina as $local) : ?> 
+                          <option  value="<?php echo $local['POSTO_VACINACAO']; ?>"> <?php echo $local['POSTO_VACINACAO']; ?></option>                          
+                        <?php   endforeach; $localVacinado = $local['POSTO_VACINACAO']; endif; ?>
+                    </select>                        
+                </select>
            </form>
            <form method="post" id="formBuscar">
             <div class="mb-3 ">
@@ -30,23 +33,26 @@
                 </div>
                 <?php endforeach; ?>                    
                 <div class="mb-3">
-                    <select class="form-select" aria-label="">
-                        <option selected>Selecine a Vacina</option>   
+                    <select name="vacina" class="form-select" aria-label="">
+                        <option selected>Selecione a Vacina</option>   
                     <?php if (!empty($nome_vacina)) : foreach ($nome_vacina as $vacina) : ?> 
-                        <option name="vacina" value="<?php echo $vacina; ?>"> <?php echo $vacina; ?></option>
+                        <option  value="<?php echo $vacina['VAC_NOME']; ?>"> <?php echo $vacina['VAC_NOME']; ?></option>
                         <?php endforeach; endif; ?>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <select class="form-select" aria-label="">
-                        <option selected>Selecine a Campanha</option>   
+                    <select name="campanha" class="form-select" aria-label="">
+                        <option selected>Selecione a Campanha</option>   
                     <?php if (!empty($nome_campanha)) : foreach ($nome_campanha as $campanha) : ?> 
-                        <option name="campanha" value="<?php echo $campanha; ?>"> <?php echo $campanha; ?></option>
+                        <option  value="<?php echo $campanha['NOME_CAMPANHA']; ?>"> <?php echo $campanha['NOME_CAMPANHA']; ?></option>
                         <?php endforeach; endif; ?>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <input type="hidden" name="data-vacinacao" class="form-control" id="formGroupExampleInput2" placeholder="NOME SERVIDOR">
+                    <input type="number" name="dose" class="form-control" id="formGroupExampleInput2" placeholder="dose">
+                </div>
+                <div class="mb-3">
+                    <input type="hidden" name="local" value="<?php echo $localVacinado; ?>" class="form-control" id="formGroupExampleInput2" placeholder="local">
                 </div>
                 <button type="submit" class="btn btn-primary">SALVAR</button>
                 <?php  else : echo "";

@@ -8,7 +8,7 @@
         </div>
     <?php } ?>
     <div class="mb-3">
-        <input type="text" name="NOME_CAMPANHA"  class="form-control" id="formGroupExampleInput2" placeholder="NOME CAMPANHA">
+        <input type="text" name="NOME_CAMPANHA"  class="form-control" id="formGroupExampleInput2" placeholder="NOME CAMPANHA E DATA Ex: NOME+ 00/00/0000">
     </div>
     <div class="mb-3">
     <label for="formGroupExample">PERIODO INICIAL</label>

@@ -17,10 +17,10 @@ class CapanhaDao extends Conexao{
 
     }
     public function consultaCampanha(){
-        $sql = "SELECT DISTINCT NOME_CAMPANHA FROM tb_campanhas ORDER BY NOME_CAMPANHA ASC";
+        $sql = "SELECT  NOME_CAMPANHA FROM tb_campanhas ORDER BY NOME_CAMPANHA ASC";
         $res= $this->dbh->query($sql);   
         if($res->rowCount() > 0){
-          return $array = $res->fetch(PDO::FETCH_ASSOC);                
+          return $array = $res->fetchAll(PDO::FETCH_ASSOC);                
       }
     }
 }

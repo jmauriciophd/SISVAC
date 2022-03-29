@@ -9,15 +9,37 @@ class homeController extends controller{
     public function index(){      
            $dados = array(0=>'msg',1=>'dados_usuarios',2=>'nome_campanha',3=>'nome_vacina'); 
              $dados['nome_campanha'] =  $this->consultarCapanha();
-             $dados['nome_vacina'] = $this->consultarVacina();         
+             $dados['nome_vacina'] = $this->consultarVacina();       
              $dados['dados_usuarios']=  $this->consultarDados();
-             
+             $dados['local_vacina']  = $this->consultarLocalVacina();
+
+             if(isset($_POST['nome']) && !empty($_POST['nome'])){
+                $vacinadao = new VacinaDao();
+
+                $nome = $_POST['nome'];                            
+                $vacina = $_POST['vacina'];
+                $campanha = $_POST['campanha'];
+                $dose = $_POST['dose'];
+                $localVacinado = $_POST['local'];             
+                
+                if($vacinadao->isvacinado($nome,$vacina,$campanha,$dose,$localVacinado)){
+                    $dados['msg']="Esta pessoa já foi vacinada";
+                }else{
+                    if($vacinadao->notVacinado($nome,$vacina,$campanha,$dose,$localVacinado)){
+                    $dados['msg']="VACINADO COM SUCESSO";
+                    }  
+                }              
+             }
              $this->cadastrarUsuario();
            $this->loadTemplate('home',$dados); 
     }    
 
     private function cadastrarRegVacina() {
 
+    }
+    private function consultarLocalVacina(){
+        $consultaVac = new VacinaDao();
+        return $consultaVac->consultaLocal();
     }
     private function consultarVacina(){
          $consultaVac = new VacinaDao();
@@ -74,12 +96,16 @@ class homeController extends controller{
                 $PERIODO_INICIAL = addslashes($_POST["PERIODO_INICIAL"]);     
                 $PERIODO_FINAL =  addslashes($_POST["PERIODO_FINAL"]);
                 $POSTO_VACINACAO =  addslashes($_POST["POSTO_VACINACAO"]);
-
-             if($cadastrar->cadastraCampanha($NOME_CAMPANHA,$PERIODO_INICIAL,$PERIODO_FINAL, $POSTO_VACINACAO )){
-                echo $dados['msg'] =   "Cadastrada com sucesso";
-             }else{
-                echo  $dados['msg'] =   "Erro ao Cadastrar";
-             }
+                if($PERIODO_FINAL<$PERIODO_INICIAL or $PERIODO_INICIAL>$PERIODO_FINAL){
+                    echo $dados['msg'] =   "DATA DE CADASTROS ERRADAS";
+                }else{
+                    if($cadastrar->cadastraCampanha($NOME_CAMPANHA,$PERIODO_INICIAL,$PERIODO_FINAL, $POSTO_VACINACAO )){
+                        $dados['msg'] =   "Cadastrada com sucesso";
+                    }else{
+                         $dados['msg'] =   "Erro ao Cadastrar";
+                    }
+                }
+             
            }
         $this->carregaView('campanha',$dados);
     }

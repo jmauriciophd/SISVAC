@@ -50,7 +50,7 @@ class UsuarioDao extends Conexao{
         }
     }    
     public function fazerLogin($nick,$senha){        
-         $sql = "SELECT id FROM tb_usuarios_sis WHERE NICK='$nick' AND SENHA='$senha'";
+         $sql = "SELECT id FROM tb_usuarios_sis WHERE NICK_USER='$nick' AND SENHA='$senha'";
          $res= $this->dbh->query($sql);   
         if($res->rowCount() > 0){
             return $_SESSION['ID'] = $res->fetch();            
