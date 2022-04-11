@@ -1,6 +1,7 @@
 <?php include_once 'header.php'; ?>
-
-<div class="container ml-1 px-2 p-3 bg-white">
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<div class="container ml-1 px-2 p-3 border">
   <h3>Cadastro de Usuarios</h3>
   <?php if(!empty($msg)) { ?>
     <div class="alert alert-danger" role="alert">

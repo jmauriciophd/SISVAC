@@ -38,11 +38,26 @@ class VacinaDao extends Conexao{
             return false;
         }
     }
-    public function consultaLocal(){
-        $sql = "SELECT POSTO_VACINACAO FROM tb_campanhas";
-        $res= $this->dbh->query($sql);   
+
+   public function qtdVacinados(){
+        $array = array();
+        $sql = "SELECT count(*) as 'totalvacinados' FROM tb_reg_vacinados";
+        $res = $this->dbh->query($sql);
         if($res->rowCount() > 0){
-            return $array = $res->fetchAll(PDO::FETCH_ASSOC);  
-      }else{return false;}
+            return $array= $res->fetchAll(PDO::FETCH_ASSOC);
+        }else{
+            return false;
+        }
+    }
+    public function qtdVacinadosDia(){
+        $hoje = new DateTime();
+        $array = array();
+        $sql = "SELECT count(*) as 'qtdtotalvacinadosdia' FROM tb_reg_vacinados";
+        $res = $this->dbh->query($sql);
+        if($res->rowCount() > 0){
+            return $array= $res->fetchAll(PDO::FETCH_ASSOC);
+        }else{
+            return false;
+        }
     }
 }

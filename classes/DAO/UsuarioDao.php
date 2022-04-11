@@ -10,7 +10,7 @@ class UsuarioDao extends Conexao{
              return false;
          }
      }
-    public function consultaDados($valor){
+    public function consultaDados($valor=''){
             $array = array();
             $sql = "SELECT tb_usuarios.NOME,tb_usuarios.RAMAL,tb_usuarios.LOTACAO,tb_usuarios.SITUACAO,
            tb_usuarios.TIPO_SERV
@@ -31,16 +31,26 @@ class UsuarioDao extends Conexao{
           return false;
       }
     }
+    public function getNickSis($id){
+        $sql = "SELECT tb_usuarios.NICK_MAT
+      FROM tb_usuarios WHERE id='$id' ORDER BY NICK_MAT ASC";
+      $res= $this->dbh->query($sql);   
+      if($res->rowCount() > 0){
+          return $array = $res->fetchAll();                
+      }
+    }
+    
     public function getNick(){
         $array = array();
           $sql = "SELECT tb_usuarios.NICK_MAT
-        FROM tb_usuarios ORDER BY NICK_MAT ASC";
+        FROM tb_usuarios  ORDER BY NICK_MAT ASC";
         $res= $this->dbh->query($sql);   
         if($res->rowCount() > 0){
             return $array = $res->fetchAll();                
         }
     }   
-    public function cadastarUsuario($NICK,$SENHA,$TIPO){
+    public function cadastrarUsuarioSis($NICK,$SENHA,$TIPO){
+
       $sql = "INSERT INTO tb_usuarios_sis SET NICK_USER='$NICK', SENHA='$SENHA', TIPO_USER='$TIPO'";
       $res= $this->dbh->query($sql);   
     if($res->rowCount() > 0){
@@ -50,12 +60,13 @@ class UsuarioDao extends Conexao{
         }
     }    
     public function fazerLogin($nick,$senha){        
-         $sql = "SELECT id FROM tb_usuarios_sis WHERE NICK_USER='$nick' AND SENHA='$senha'";
+         $sql = "SELECT id,NICK_USER FROM tb_usuarios_sis WHERE NICK_USER='$nick' AND SENHA='$senha'";
          $res= $this->dbh->query($sql);   
         if($res->rowCount() > 0){
-            return $_SESSION['ID'] = $res->fetch();            
+            return $_SESSION['ID'] = $res->fetchAll();            
         }else{
             return false;
         }
     }
+   
 }

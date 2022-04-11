@@ -2,7 +2,7 @@
     <head><title>💧 Sistema de Vacinas💧</title>
 		<!--Custom styles-->		
 	<!--Bootsrap 4 CDN-->
-	html>
+
 <head>
     <title>💧 Sistema de Vacinas do STJ 💧</title>
 	<link rel="stylesheet" href="<?= BASE_URL ?>/css/style.css">
@@ -12,8 +12,8 @@
     <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
-<body>
-<div class="container">
+<body style="background-image: url('http://localhost:8080/stjvac/css/bg.jpeg')">
+<div class="">
 	<div class="d-flex justify-content-center h-10 mt-3" >
 		<div class="card">
 			<div class="card-body">

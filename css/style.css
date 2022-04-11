@@ -1,15 +1,19 @@
-.barra-superior h2{
-    color: #ffffff;
+.barra-menu{
+   float: left;
+   width:100%;
+   height:45px;
+   background-color:#303030;
 }
+
 .btsalvar{
     visibility:hidden;
 }
 
 html,body{
-    background-image: url('https://ilhadoconhecimento.com.br/wp-content/uploads/2020/09/metade-das-criancas-que-deveriam-ser-vacinadas-em-2020-ainda-nao-receberam-vacinas-ilha-do-conhecimento-banner-NEWS.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
+    color: black;
     font-family: 'Numans', sans-serif;
 }
     

@@ -8,16 +8,13 @@ class TipoUsuarios extends Usuarios{
         public function setTipoUsuarios($tipoUsuarios){
                 $this->tipoUsuarios = $tipoUsuarios;
         }
-        public function gettipoUsuarios(){
+        public function getTipoUsuario(){
                  if($this->tipoUsuarios==1){
                         return $this->tipoUsuarios="Servidor Ativo";
-
                  }else if($this->tipoUsuarios==2){
-
                         return $this->tipoUsuarios="Servidor Inativo";
 
-                 }elseif($this->tipoUsuarios==3){
-                         
+                 }elseif($this->tipoUsuarios==3){                         
                         return $this->tipoUsuarios="Prestador";
                  }       
         }

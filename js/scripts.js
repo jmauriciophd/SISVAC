@@ -28,5 +28,26 @@ function isBlur(){
 function executando(){  
     
 }
+function selection(obj){ 
+     if(obj == "Selecione o local de vacinação"){
+        document.getElementById('formBuscar').style.display ="block";
+     }{
+        document.getElementById('formBuscar').style.display ="none";
 
-
+     }
+     focusMethode = function getFocus(){
+         document.getElementById('myTextFocus').focus();
+     }
+}
+function executar(){ 
+    
+}
+function delay(n){ 
+    return new Promise(function(resolve){
+        setTimeout(resolve,n * 1000);        
+    })
+}
+async function myassyncFunction(){
+    await delay(executar());
+}
+myassyncFunction();
