@@ -3,8 +3,8 @@ class VacinaDao extends Conexao{
     public function __construct(){
         parent::__construct();
     }
-    public function cadastraVacina($nome_vacina,$numerolote,$vacinatipo, $datavalidade,$vacinafabricante ){
-        $sql = "INSERT INTO tb_vacina  SET VAC_NOME='$nome_vacina',	VAC_LOTE='$numerolote', VAC_TIPO='$vacinatipo',	VAC_DATVAL='$datavalidade',VAC_FABRICANTE='$vacinafabricante'";
+    public function cadastraVacina($nome_vacina,$numerolote,$vacinatipo, $datavalidade,$vacinafabricante,$dose ){
+        $sql = "INSERT INTO tb_vacina  SET VAC_NOME='$nome_vacina',	VAC_LOTE='$numerolote', VAC_TIPO='$vacinatipo',	VAC_DATVAL='$datavalidade',VAC_FABRICANTE='$vacinafabricante',DOSE= '$dose'";
         $res = $this->dbh->query($sql);
         if($res->rowCount() > 0){
             return true;
@@ -13,7 +13,7 @@ class VacinaDao extends Conexao{
         }
     }
     public function consultaVacina(){
-        $sql = "SELECT DISTINCT VAC_NOME FROM tb_vacina ORDER BY VAC_ID";
+        $sql = "SELECT DISTINCT VAC_NOME,DOSE FROM tb_vacina ORDER BY VAC_ID LIMIT 1";
         $res= $this->dbh->query($sql);   
         if($res->rowCount() > 0){
           return $array = $res->fetchAll(PDO::FETCH_ASSOC);                
@@ -41,8 +41,12 @@ class VacinaDao extends Conexao{
 
    public function qtdVacinados(){
         $array = array();
-        $sql = "SELECT count(*) as 'totalvacinados' FROM tb_reg_vacinados";
+        $CAMPANHA_ATUAL= $_SESSION['nome_campanha'];
+
+        $sql = "SELECT count(*) as 'totalvacinados' FROM tb_reg_vacinados WHERE CAMPANHA_ATUAL='$CAMPANHA_ATUAL'";
+
         $res = $this->dbh->query($sql);
+
         if($res->rowCount() > 0){
             return $array= $res->fetchAll(PDO::FETCH_ASSOC);
         }else{
@@ -50,9 +54,9 @@ class VacinaDao extends Conexao{
         }
     }
     public function qtdVacinadosDia(){
-        $hoje = new DateTime();
+        $hoje =  date("Y-m-d");  
         $array = array();
-        $sql = "SELECT count(*) as 'qtdtotalvacinadosdia' FROM tb_reg_vacinados";
+        $sql = "SELECT  COUNT(*) as vacinadosdia  FROM tb_reg_vacinados WHERE REGV_DATA = '$hoje'";
         $res = $this->dbh->query($sql);
         if($res->rowCount() > 0){
             return $array= $res->fetchAll(PDO::FETCH_ASSOC);

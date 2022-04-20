@@ -12,7 +12,7 @@
     <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
-<body style="background-image: url('http://localhost:8080/stjvac/css/bg.jpeg')">
+<body style="background-image: url('<?= BASE_URL ?>/css/bg.jpeg')">
 <div class="">
 	<div class="d-flex justify-content-center h-10 mt-3" >
 		<div class="card">

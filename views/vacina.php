@@ -21,7 +21,10 @@
     </div> 
     <div class="mb-3">
         <input type="text" required  name="vacinafabricante" class="form-control" id="formGroupExampleInput2" placeholder="FABRICANTE">
-    </div>     
+    </div>   
+    <div class="mb-3">
+        <input type="text" required  name="dose" class="form-control" id="formGroupExampleInput2" placeholder="DOSE APLICADA">
+    </div>  
     <input type="submit" class="btn btn-primary" onclick="focusMethod()" value="Cadastrar">
 </form>
 </div>

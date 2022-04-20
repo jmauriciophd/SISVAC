@@ -9,9 +9,9 @@
 <nav>
     <div class="float-left barra-superior text-black " style="height: 42px;
     background: aliceblue;">
-        <h2 class="ml-1 ">SISVAC-SISTEMA DE VACINAS</h2>
+        <h2 class="ml-1">SISVAC-SISTEMA DE VACINAS</h2>
     </div>
-    <div class="float-md-right">
+    <div class="float-md-right mb-1">
         <?php
         if (isset($_SESSION['nome_campanha']) && !empty($_SESSION['nome_campanha']) && isset($_SESSION['local_vacinacao']) && !empty($_SESSION['local_vacinacao'])) {
             echo " <strong>CAPANHA ATUAL :</strong>  " . $_SESSION['nome_campanha'] .  "   <strong>LOCAL ATUAL :</strong> " . $_SESSION['local_vacinacao'];

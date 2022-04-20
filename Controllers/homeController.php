@@ -31,7 +31,7 @@ class homeController extends controller
 
         $dados['dados_usuarios'] =  $this->consultarDados();
         $dados['nome_vacina'] = $this->consultarVacina();
-        $dados['qtdvacinados']  = $vacinadao->qtdVacinados();
+        $dados['qtdvacinados']  =    $vacinadao->qtdVacinados();
         $dados['qtdvacinadosdia']  = $vacinadao->qtdVacinadosDia();
 
         if (isset($_POST['nome']) && !empty($_POST['nome'])) {
@@ -44,9 +44,11 @@ class homeController extends controller
             if ($vacinadao->isvacinado($nome, $vacina, $campanha, $dose, $localVacinado)) {
                     $dados['msg'] = "Esta pessoa já foi vacinada";
             } else {
-                if ($vacinadao->notVacinado($nome, $vacina, $campanha, $dose, $localVacinado)) {
+                if ($vacinadao->notVacinado($nome, $vacina, $campanha,$dose,$localVacinado)) {
                     $dados['msg'] = "VACINADO COM SUCESSO";
+                    
                 }
+                
             }
         }
         $this->loadTemplate('dadosusuarios', $dados);
@@ -73,6 +75,15 @@ class homeController extends controller
     }
     //CONSULTA DADOS DO USUARIO
     public function consultarDados()
+    {
+        $array = array(1 => 'msg');
+        if (isset($_POST["valor"]) && !empty($_POST["valor"])) {
+            $valor = $_POST["valor"];
+            $consulta = new UsuarioDao();
+            return $dados =  $consulta->consultaDados($valor);
+        }
+    }
+    public function consultarDadosVacina()
     {
         $array = array(1 => 'msg');
         if (isset($_POST["valor"]) && !empty($_POST["valor"])) {
@@ -194,8 +205,9 @@ class homeController extends controller
             $vacinatipo =  addslashes($_POST["vacinatipo"]);
             $datavalidade =  addslashes($_POST["datavalidade"]);
             $vacinafabricante =  addslashes($_POST["vacinafabricante"]);
+            $dose =  addslashes($_POST["dose"]);
 
-            if ($cadastrar->cadastraVacina($nome_vacina, $numerolote, $vacinatipo, $datavalidade, $vacinafabricante)) {
+            if ($cadastrar->cadastraVacina($nome_vacina, $numerolote, $vacinatipo, $datavalidade, $vacinafabricante,$dose)) {
                 echo $dados['msg'] =   "Cadastrada com sucesso";
             } else {
                 echo  $dados['msg'] =   "Erro ao Cadastrar";
