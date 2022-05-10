@@ -27,13 +27,11 @@ inputs.forEach(function(input){
         }
     })
 })
-
 function isBlur(){
     alert("BLUR")
     const inputbutons = document.querySelector("#input");
     inputbutons.focus();   
 }
-
 function selection(obj){ 
      if(obj == "Selecione o local de vacinação"){
         document.getElementById('formBuscar').style.display ="block";
@@ -46,8 +44,7 @@ function selection(obj){
      }
 }
 function executar(){     
-    var formreg  =         document.getElementsByClassName("cadastrar_reg");
-   
+    var formreg  =   document.getElementsByClassName("cadastrar_reg");   
 }
 function delay(n){ 
     return new Promise(function(resolve){
@@ -57,7 +54,14 @@ function delay(n){
 async function myassyncFunction(){
     await delay(executar());
 }
-
 window.onload = function () {
-    document.getElementById("valorCampo").focus();
+     var button = document.getElementById("valorCampo").focus();
+     document.addEventListener("keypress",function(e){
+         if(e.keycode == 13){
+            document.getElementById("valorCampo").onblur();
+            document.getElementById("valorCampo2").focus();
+         }else{
+            document.getElementById("valorCampo").focus();
+         }
+     })
 }

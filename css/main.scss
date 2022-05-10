@@ -1,0 +1,70 @@
+$component-name: "c-circular-progress";
+$width:rem(100);
+$height:rem(100);
+
+$webfactorial-colors:(
+    'webfactorial-primary' : #157bad,
+    'webfactorial-secondary' : #06618c,
+    'webfactorial-success': #3cc368,
+    'webfactorial-warning': #f5a600,
+    'webfactorial-error' : #ec5840,
+    'webfactorial-gray-1': #363636,
+    'webfactorial-gray-2': #4f4f4f,
+    'webfactorial-gray-3': #828282,
+    'webfactorial-gray-4': #bdbdbd,
+    'webfactorial-gray-5': #e0e0e0,
+    'webfactorial-white': #fcfcfc,
+);
+$dpw-colors:(
+    'dpw-primary' : #3da6c8,
+    'dpw-secondary' : darken(#3da6c8,12%),
+);
+
+.#{$component-name}{
+    $color-background:map-get($webfactorial-colors,"webfactorial-gray-2");
+    $color-fill:map-get($dpw-colors,"dpw-primary");
+
+     @for $i from 0 to 10000 {
+         $deg:900deg +(3.6* $i);
+
+     &--#{$i}{
+             $direction: if($i <51, right,left);
+             $color: if($i <51, $color-background, $color-fill);
+             background:linear-gradient(
+                to #{$direction},
+                #{$color} 50%,
+                transparent 50%,
+              ),
+             linear-gradient(#{$deg}, $color-fill 50%,$color-background 50%,);
+             &::before{
+                 content:quote("#{$i}");
+             }
+            }
+        }
+    border-radius: 50%;    
+    display:block;;
+    color: var(--color-webfactorial-white);
+    margin:5px 0 10px  5px;
+    
+    &::before{
+         -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background-color: #ffff;
+        border-radius: 50%;
+        color: var(--color-webfactorial-white);
+        display: block;
+        font-size: 500%;
+        height: 100%;
+        content:0;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+        width: 100%;
+        display: flex;
+       
+    }
+    
+}

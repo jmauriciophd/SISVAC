@@ -1,0 +1,833 @@
+.c-circular-progress {
+  border-radius: 50%;
+  display: block;
+  color: var(--color-webfactorial-white);
+  margin: 5px 0 10px  5px;
+}
+
+.c-circular-progress--0 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #4f4f4f), color-stop(50%, transparent)), -webkit-gradient(linear, left top, left bottom, color-stop(50%, #3da6c8), color-stop(50%, #4f4f4f));
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(900deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--0::before {
+  content: "0";
+}
+
+.c-circular-progress--1 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(903.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--1::before {
+  content: "1";
+}
+
+.c-circular-progress--2 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(907.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--2::before {
+  content: "2";
+}
+
+.c-circular-progress--3 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(910.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--3::before {
+  content: "3";
+}
+
+.c-circular-progress--4 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(914.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--4::before {
+  content: "4";
+}
+
+.c-circular-progress--5 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(918deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--5::before {
+  content: "5";
+}
+
+.c-circular-progress--6 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(921.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--6::before {
+  content: "6";
+}
+
+.c-circular-progress--7 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(925.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--7::before {
+  content: "7";
+}
+
+.c-circular-progress--8 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(928.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--8::before {
+  content: "8";
+}
+
+.c-circular-progress--9 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(932.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--9::before {
+  content: "9";
+}
+
+.c-circular-progress--10 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(936deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--10::before {
+  content: "10";
+}
+
+.c-circular-progress--11 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(939.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--11::before {
+  content: "11";
+}
+
+.c-circular-progress--12 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(943.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--12::before {
+  content: "12";
+}
+
+.c-circular-progress--13 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(946.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--13::before {
+  content: "13";
+}
+
+.c-circular-progress--14 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(950.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--14::before {
+  content: "14";
+}
+
+.c-circular-progress--15 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(954deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--15::before {
+  content: "15";
+}
+
+.c-circular-progress--16 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(957.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--16::before {
+  content: "16";
+}
+
+.c-circular-progress--17 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(961.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--17::before {
+  content: "17";
+}
+
+.c-circular-progress--18 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(964.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--18::before {
+  content: "18";
+}
+
+.c-circular-progress--19 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(968.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--19::before {
+  content: "19";
+}
+
+.c-circular-progress--20 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(972deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--20::before {
+  content: "20";
+}
+
+.c-circular-progress--21 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(975.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--21::before {
+  content: "21";
+}
+
+.c-circular-progress--22 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(979.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--22::before {
+  content: "22";
+}
+
+.c-circular-progress--23 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(982.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--23::before {
+  content: "23";
+}
+
+.c-circular-progress--24 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(986.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--24::before {
+  content: "24";
+}
+
+.c-circular-progress--25 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #4f4f4f), color-stop(50%, transparent)), -webkit-gradient(linear, right top, left top, color-stop(50%, #3da6c8), color-stop(50%, #4f4f4f));
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(990deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--25::before {
+  content: "25";
+}
+
+.c-circular-progress--26 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(993.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--26::before {
+  content: "26";
+}
+
+.c-circular-progress--27 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(997.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--27::before {
+  content: "27";
+}
+
+.c-circular-progress--28 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1000.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--28::before {
+  content: "28";
+}
+
+.c-circular-progress--29 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1004.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--29::before {
+  content: "29";
+}
+
+.c-circular-progress--30 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1008deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--30::before {
+  content: "30";
+}
+
+.c-circular-progress--31 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1011.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--31::before {
+  content: "31";
+}
+
+.c-circular-progress--32 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1015.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--32::before {
+  content: "32";
+}
+
+.c-circular-progress--33 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1018.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--33::before {
+  content: "33";
+}
+
+.c-circular-progress--34 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1022.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--34::before {
+  content: "34";
+}
+
+.c-circular-progress--35 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1026deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--35::before {
+  content: "35";
+}
+
+.c-circular-progress--36 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1029.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--36::before {
+  content: "36";
+}
+
+.c-circular-progress--37 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1033.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--37::before {
+  content: "37";
+}
+
+.c-circular-progress--38 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1036.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--38::before {
+  content: "38";
+}
+
+.c-circular-progress--39 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1040.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--39::before {
+  content: "39";
+}
+
+.c-circular-progress--40 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1044deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--40::before {
+  content: "40";
+}
+
+.c-circular-progress--41 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1047.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--41::before {
+  content: "41";
+}
+
+.c-circular-progress--42 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1051.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--42::before {
+  content: "42";
+}
+
+.c-circular-progress--43 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1054.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--43::before {
+  content: "43";
+}
+
+.c-circular-progress--44 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1058.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--44::before {
+  content: "44";
+}
+
+.c-circular-progress--45 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1062deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--45::before {
+  content: "45";
+}
+
+.c-circular-progress--46 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1065.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--46::before {
+  content: "46";
+}
+
+.c-circular-progress--47 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1069.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--47::before {
+  content: "47";
+}
+
+.c-circular-progress--48 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1072.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--48::before {
+  content: "48";
+}
+
+.c-circular-progress--49 {
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1076.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--49::before {
+  content: "49";
+}
+
+.c-circular-progress--50 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #4f4f4f), color-stop(50%, transparent)), -webkit-gradient(linear, left bottom, left top, color-stop(50%, #3da6c8), color-stop(50%, #4f4f4f));
+  background: linear-gradient(to right, #4f4f4f 50%, transparent 50%), linear-gradient(1080deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--50::before {
+  content: "50";
+}
+
+.c-circular-progress--51 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1083.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--51::before {
+  content: "51";
+}
+
+.c-circular-progress--52 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1087.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--52::before {
+  content: "52";
+}
+
+.c-circular-progress--53 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1090.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--53::before {
+  content: "53";
+}
+
+.c-circular-progress--54 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1094.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--54::before {
+  content: "54";
+}
+
+.c-circular-progress--55 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1098deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--55::before {
+  content: "55";
+}
+
+.c-circular-progress--56 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1101.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--56::before {
+  content: "56";
+}
+
+.c-circular-progress--57 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1105.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--57::before {
+  content: "57";
+}
+
+.c-circular-progress--58 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1108.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--58::before {
+  content: "58";
+}
+
+.c-circular-progress--59 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1112.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--59::before {
+  content: "59";
+}
+
+.c-circular-progress--60 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1116deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--60::before {
+  content: "60";
+}
+
+.c-circular-progress--61 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1119.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--61::before {
+  content: "61";
+}
+
+.c-circular-progress--62 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1123.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--62::before {
+  content: "62";
+}
+
+.c-circular-progress--63 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1126.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--63::before {
+  content: "63";
+}
+
+.c-circular-progress--64 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1130.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--64::before {
+  content: "64";
+}
+
+.c-circular-progress--65 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1134deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--65::before {
+  content: "65";
+}
+
+.c-circular-progress--66 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1137.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--66::before {
+  content: "66";
+}
+
+.c-circular-progress--67 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1141.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--67::before {
+  content: "67";
+}
+
+.c-circular-progress--68 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1144.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--68::before {
+  content: "68";
+}
+
+.c-circular-progress--69 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1148.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--69::before {
+  content: "69";
+}
+
+.c-circular-progress--70 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1152deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--70::before {
+  content: "70";
+}
+
+.c-circular-progress--71 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1155.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--71::before {
+  content: "71";
+}
+
+.c-circular-progress--72 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1159.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--72::before {
+  content: "72";
+}
+
+.c-circular-progress--73 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1162.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--73::before {
+  content: "73";
+}
+
+.c-circular-progress--74 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1166.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--74::before {
+  content: "74";
+}
+
+.c-circular-progress--75 {
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #3da6c8), color-stop(50%, transparent)), -webkit-gradient(linear, left top, right top, color-stop(50%, #3da6c8), color-stop(50%, #4f4f4f));
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1170deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--75::before {
+  content: "75";
+}
+
+.c-circular-progress--76 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1173.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--76::before {
+  content: "76";
+}
+
+.c-circular-progress--77 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1177.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--77::before {
+  content: "77";
+}
+
+.c-circular-progress--78 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1180.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--78::before {
+  content: "78";
+}
+
+.c-circular-progress--79 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1184.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--79::before {
+  content: "79";
+}
+
+.c-circular-progress--80 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1188deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--80::before {
+  content: "80";
+}
+
+.c-circular-progress--81 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1191.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--81::before {
+  content: "81";
+}
+
+.c-circular-progress--82 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1195.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--82::before {
+  content: "82";
+}
+
+.c-circular-progress--83 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1198.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--83::before {
+  content: "83";
+}
+
+.c-circular-progress--84 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1202.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--84::before {
+  content: "84";
+}
+
+.c-circular-progress--85 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1206deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--85::before {
+  content: "85";
+}
+
+.c-circular-progress--86 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1209.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--86::before {
+  content: "86";
+}
+
+.c-circular-progress--87 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1213.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--87::before {
+  content: "87";
+}
+
+.c-circular-progress--88 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1216.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--88::before {
+  content: "88";
+}
+
+.c-circular-progress--89 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1220.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--89::before {
+  content: "89";
+}
+
+.c-circular-progress--90 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1224deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--90::before {
+  content: "90";
+}
+
+.c-circular-progress--91 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1227.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--91::before {
+  content: "91";
+}
+
+.c-circular-progress--92 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1231.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--92::before {
+  content: "92";
+}
+
+.c-circular-progress--93 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1234.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--93::before {
+  content: "93";
+}
+
+.c-circular-progress--94 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1238.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--94::before {
+  content: "94";
+}
+
+.c-circular-progress--95 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1242deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--95::before {
+  content: "95";
+}
+
+.c-circular-progress--96 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1245.6deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--96::before {
+  content: "96";
+}
+
+.c-circular-progress--97 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1249.2deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--97::before {
+  content: "97";
+}
+
+.c-circular-progress--98 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1252.8deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--98::before {
+  content: "98";
+}
+
+.c-circular-progress--99 {
+  background: linear-gradient(to left, #3da6c8 50%, transparent 50%), linear-gradient(1256.4deg, #3da6c8 50%, #4f4f4f 50%);
+}
+
+.c-circular-progress--99::before {
+  content: "99";
+}
+
+.c-circular-progress::before {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ffff;
+  border-radius: 50%;
+  color: var(--color-webfactorial-white);
+  display: block;
+  font-size: 500%;
+  height: 100%;
+  content: 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=main.css.map */

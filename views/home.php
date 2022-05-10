@@ -11,7 +11,7 @@
                 </select>
             </div>
             <div class="mb-3">
-                <select class="form-control" name="local">
+                <select class="form-select" name="local">
                     <option required disabled  value="Selecione o local de vacinação">Selecione o local de vacinação</option>                    
                         <?php  if(!empty($local_vacina)) : foreach ($local_vacina as $local) : ?> 
                         <option class="selected"  value="<?php echo $local['posto_de_vacinacao']; ?>"> <?php  echo $local['posto_de_vacinacao']; ?></option>                          

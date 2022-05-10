@@ -1,3 +1,11 @@
+.c-circular-progress{
+    width:150px;
+    height:150px;
+    
+}
+.c-circular-progress::before {
+    
+}
 .barra-menu{
    float: left;
    width:100%;
@@ -71,11 +79,7 @@ html,body{
     margin-right: 5px;
     }
     
-    .login_btn{
-    color: black;
-    background-color: #FFC312;
-    width: 100px;
-    }
+ 
     
     .login_btn:hover{
     color: black;
@@ -89,3 +93,20 @@ html,body{
     .links a{
     margin-left: 4px;
     }
+    .conteudo_dropdow-principal{
+        cursor: pointer;
+    }
+    .conteudo_dropdow-principal:hover > .conteudo_dropdown{
+        display: block;
+        background-color:#7b7b7b;
+        margin-top:13px;
+        list-style: none;
+    }
+    .conteudo_dropdown {
+        display: none;
+        list-style: none;
+        color: black;   
+        border: none;
+    }
+    
+    

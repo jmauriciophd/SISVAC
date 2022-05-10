@@ -64,13 +64,6 @@
 *::after {
   box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -81,6 +74,7 @@ body {
   text-align: var(--bs-body-text-align);
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
+  text-size-adjust:100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -2194,6 +2188,7 @@ ul,
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
+  -webkit-background-clip:padding-box;
   background-clip: padding-box;
   border: 1px solid #505690;
   -webkit-appearance: none;
@@ -2987,6 +2982,7 @@ textarea.form-control-lg {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
+  --ms-user-select:none;
   user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
@@ -3953,7 +3949,7 @@ nav{
 .nav-tabs .nav-link {
   margin-bottom: -1px;
   background: none;
-  border: 1px solid transparent;
+  /*border: 1px solid transparent;*/
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
@@ -5450,6 +5446,7 @@ nav{
   color: #6c757d;
   background-color: rgba(255, 255, 255, 0.85);
   background-clip: padding-box;
+  -webkit-background-clip:padding-box;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
@@ -8897,7 +8894,7 @@ nav{
 
   .mx-md-1 {
     margin-right: 0.25rem !important;
-    margin-left: 0.25rem !important;
+    margin-left: 0.75rem !important;
   }
 
   .mx-md-2 {
