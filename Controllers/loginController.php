@@ -8,6 +8,7 @@ public function index(){
         $logar = new UsuarioDao(); 
         if(isset($_POST["NICK"]) && empty($_POST["NICK"])){
             $array['msg'] = "Usuário ou Senha Vazios";
+            header("Refresh:5;".BASE_URL); 
         }
         if(isset($_POST["NICK"]) && !empty($_POST["NICK"])){            
             $valor = addslashes($_POST["NICK"]);
@@ -19,10 +20,10 @@ public function index(){
                     $_SESSION["NICK_USER"]= $valor; //ATRIBUI O NICK A SESSAO NICKUSER                                                   
                       header("Location:".BASE_URL);  //REDIRECIONA PARA A PAGINA PRINCIPAL   
                   //CONFIRMA O NICK DO USUARIO LOGADO                           
-                 }                                    
+                 }                                   
             }else{
                 $array['msg'] = "Usuário ou senha Invalidos";
-                header('Refresh:5');                 
+                header("Refresh:5;".BASE_URL);                              
             }
         }
         $pagina = basename('login');       

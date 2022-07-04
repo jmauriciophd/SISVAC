@@ -1,11 +1,11 @@
 <?php include_once 'header.php'; ?>
     <!--Fontawesome CDN-->
 
-<div class="container ml-1 px-2 p-3 border">
+<div class="container ml-1 px-2 p-3 border"  style="margin-top: 70px;">
   <h3>Cadastro de Usuarios</h3>
-   <h5>O sistema gerada uma senha Padrão 123456- altere-a depois</h5>
+   <h5>O sistema gera uma senha Padrão ex. 123456 - altere-a depois</h5>
   <?php if(!empty($msg)) { ?>
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-success" role="success">
       <?php echo $msg; ?>
     </div>
   <?php } ?>
@@ -33,5 +33,4 @@
       <input type="submit" value="CADASTRAR" class="btn btn-primary float-right">
     </div>
   </form>
-
 </div>

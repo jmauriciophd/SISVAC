@@ -3,7 +3,6 @@
 	<title>💧 Sistema de Vacinas💧</title>
 	<!--Custom styles-->
 	<!--Bootsrap 4 CDN-->
-
 	<head>
 		<title>💧 Sistema de Vacinas do STJ 💧</title>
 		<link rel="stylesheet" href="<?= BASE_URL ?>/css/style.css">
@@ -13,15 +12,14 @@
 		<!--Fontawesome CDN-->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	</head>
-
 <body style="background-image: url('<?= BASE_URL ?>/css/bg.jpeg')">
 	<div class="">
 		<div class="d-flex justify-content-center h-10 mt-3">
 			<div class="card">
 				<div class="card-body">
-					<span class="barra-superior">
-						<h2>SISVAC-SISTEMA DE VACINAS</h2>
-					</span>
+					<div class="logo-bg">
+						<img src="<?= BASE_URL ?>/css/sivac_logo.png" alt="Logo do sistema">
+					</div>
 					<span>
 						<?php if (!empty($msg)) { ?>
 							<div class="alert alert-danger" role="alert">
@@ -34,7 +32,7 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" name="NICK" placeholder="NICK">
+							<input type="text" class="form-control " id="valorCampologin" name="NICK" placeholder="NICK">
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
@@ -51,5 +49,4 @@
 		</div>
 	</div>
 </body>
-
 </html>

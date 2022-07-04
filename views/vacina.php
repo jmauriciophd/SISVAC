@@ -1,5 +1,5 @@
 <?php include_once 'header.php'; ?>
-<div class="container ml-1 px-2 p-3 border">
+<div class="container ml-1 px-2 p-3 border"  style="margin-top: 70px;">
 <h3>Cadastro de vacinas</h3>
 <form method="post">
     <?php if(!empty($msg)) { ?>

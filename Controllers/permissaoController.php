@@ -21,7 +21,7 @@ class permissaoController extends Controller{
     private function estaAutorizado($pagina,$nivel){         
 
              $paginas  = [
-                          '1'=> ['dadosusuarios','campanha','header','home','login','template','usuarios','vacina'],
+                          '1'=> ['dadosusuarios','campanha','header','home','login','template','usuarios','vacina','relatorios'],
                           '2'=> ['dadosusuarios','header','home','login','template']    
                          ];  
                                     

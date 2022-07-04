@@ -19,7 +19,7 @@ $dpw-colors:(
     'dpw-primary' : #3da6c8,
     'dpw-secondary' : darken(#3da6c8,12%),
 );
-
+/*
 .#{$component-name}{
     $color-background:map-get($webfactorial-colors,"webfactorial-gray-2");
     $color-fill:map-get($dpw-colors,"dpw-primary");
@@ -54,7 +54,7 @@ $dpw-colors:(
         border-radius: 50%;
         color: var(--color-webfactorial-white);
         display: block;
-        font-size: 500%;
+        font-size: 100%;
         height: 100%;
         content:0;
         -webkit-box-pack: center;

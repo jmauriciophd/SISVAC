@@ -2211,7 +2211,7 @@ ul,
 .form-control:focus {
   color: #212529;
   background-color: #fff;
-  border-color: #86b7fe;
+  border-color: #f35277;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
@@ -2723,7 +2723,7 @@ textarea.form-control-lg {
 .input-group > .form-control,
 .input-group > .form-select {
   position: relative;
-  flex: 1 1 auto;
+  flex: 0.4 1 auto;
   width: 1%;
   min-width: 0;
 }
@@ -2972,6 +2972,7 @@ textarea.form-control-lg {
 }
 
 .btn {
+  margin-left: 5px; 
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -3935,7 +3936,7 @@ nav{
   
 }
 .nav-link:hover, .nav-link:focus {
-  color: #0a58ca;
+  color: #4b8ff5;
 }
 .nav-link.disabled {
   color: #6c757d;
@@ -7307,6 +7308,9 @@ nav{
 }
 
 .mt-5 {
+  margin-top: 3rem !important;
+}
+.mt-6 {
   margin-top: 3rem !important;
 }
 

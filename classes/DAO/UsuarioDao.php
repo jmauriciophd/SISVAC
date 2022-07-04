@@ -27,6 +27,20 @@ class UsuarioDao extends Conexao
             return false;
         }
     }
+    public function consultaTodos()
+    {
+        $array = array();       
+
+        $sql = "SELECT count(*) as 'totalusuarios' FROM tb_usuarios";
+
+        $res = $this->dbh->query($sql);
+
+        if ($res->rowCount() > 0) {
+            return $array = $res->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return false;
+        }
+    }
     public function consultaNick($nick)
     {
         $sql = "SELECT *
@@ -53,7 +67,7 @@ class UsuarioDao extends Conexao
         $array = array();
         $sql = "SELECT tb_usuarios.NICK_MAT
         FROM tb_usuarios WHERE NICK_MAT='$nick'  ORDER BY NICK_MAT ASC";
-        echo $sql;
+    
         $res = $this->dbh->query($sql);
         if ($res->rowCount() > 0) {
             return $array = $res->fetchAll(PDO::FETCH_ASSOC);
@@ -94,7 +108,7 @@ class UsuarioDao extends Conexao
         }
     }
     public function alterarSenha($senhaalterada){
-        $sql = "UPDATE INTO tb_usuarios_sis SET SENHA='$senhaalterada'";
+        $sql = "UPDATE  tb_usuarios_sis SET SENHA='$senhaalterada'";
         $res = $this->dbh->query($sql);
         if ($res->rowCount() > 0) {
             return true;

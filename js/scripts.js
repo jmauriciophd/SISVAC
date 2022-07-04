@@ -1,15 +1,21 @@
+    window.onload = function() {
 
-var inputs = document.querySelectorAll("input");
-var button = document.querySelector("button");
+        document.getElementById("valorCampo").focus();
+        var inputs = document.querySelectorAll("input");
+        checkImputs(inputs);
+    }        
+
 var submit_gravar = document.getElementsByClassName("submit-gravar");
 
-var alert = document.getElementsByClassName("alert");
-if(alert.value == ""){
-    alert.style='display:block';
-}else{
-    alert.style = 'display: none'
+function submit_gravar(){
+    var alert = document.getElementsByClassName("alert");
+    if(alert.value == ""){
+        alert.style='display:block';
+    }else{
+        alert.style = 'display: none'
+    }
 }
-function checkImputs(inputs){
+function checkImputs(inputs){    
     var filled = true;
     inputs.forEach(function(input){
         if(input.value === ""){
@@ -28,8 +34,7 @@ inputs.forEach(function(input){
     })
 })
 function isBlur(){
-    alert("BLUR")
-    const inputbutons = document.querySelector("#input");
+    const inputbutons = document.querySelector("input");
     inputbutons.focus();   
 }
 function selection(obj){ 
@@ -44,7 +49,8 @@ function selection(obj){
      }
 }
 function executar(){     
-    var formreg  =   document.getElementsByClassName("cadastrar_reg");   
+    var formreg  =  document.getElementById("valorCampologin").focus(); 
+    document.getElementById("#valorCampo").focus();
 }
 function delay(n){ 
     return new Promise(function(resolve){
@@ -54,14 +60,4 @@ function delay(n){
 async function myassyncFunction(){
     await delay(executar());
 }
-window.onload = function () {
-     var button = document.getElementById("valorCampo").focus();
-     document.addEventListener("keypress",function(e){
-         if(e.keycode == 13){
-            document.getElementById("valorCampo").onblur();
-            document.getElementById("valorCampo2").focus();
-         }else{
-            document.getElementById("valorCampo").focus();
-         }
-     })
-}
+

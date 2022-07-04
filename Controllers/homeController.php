@@ -13,15 +13,19 @@ class homeController extends controller
         $dados = array(0 => 'msg', 1 => 'nome_campanha', 2 => 'nome_user');
         $dados['nome_campanha'] =  $this->consultarCampanha();
         $dados['local_vacina']  = $this->consultarLocalVacina();
+        $dados['vacina_atual']  = $this->consultarVacina();
 
         if (isset($_POST['campanha']) && !empty($_POST['campanha'])) {
             $_SESSION['nome_campanha']  = $_POST['campanha'];
             $_SESSION['local_vacinacao'] = $_POST['local'];
-            
+            $_SESSION['vacina_atual'] =  $_POST['vacina'];
         }
-        if (isset($_SESSION['nome_campanha']) && !empty($_SESSION['nome_campanha']) && isset($_SESSION['local_vacinacao']) && !empty($_SESSION['local_vacinacao'])) {
+        if (isset($_SESSION['nome_campanha']) && !empty($_SESSION['nome_campanha']) && 
+        isset($_SESSION['local_vacinacao']) && !empty($_SESSION['local_vacinacao']) && 
+        isset($_SESSION['vacina_atual']) && !empty($_SESSION['vacina_atual'])) {
             $this->cadastrarRegVacina();            
         }
+        $this->alterar();
         $this->loadTemplate('home', $dados);
     }
     //CADASTRA USUARIO AVULSO
@@ -46,7 +50,7 @@ class homeController extends controller
             if ($novoUsuario->cadastrarUsuarioAvulso($CPF, $nomeusuario, $telefone, $lotacao, $situcao, $situcao, $funcao, $tipoServidor)) {
                 $vacinadao->notVacinado($nomeusuario,  $vacina[0]["VAC_NOME"], $_SESSION['nome_campanha'],$dose[0]["DOSE"], $_SESSION['local_vacinacao']);
                 $array['msg'] = "Usuario CADASTRADO e VACINADO com sucesso";                
-                header("Refresh:5;".BASE_URL);
+                header("Refresh:3;".BASE_URL);
             } else {
                 $array['msg'] = "Erro ao cadastrar o usuário";
                 header("Refresh:3");
@@ -59,13 +63,21 @@ class homeController extends controller
     {
         $dados = array(0 => 'msg', 1 => 'dados_usuarios', 2 => 'nome_vacina', 3 => 'qtdvacinados', 4 => 'vacinadosposto', 5 => 'ultimosVacinados');
         $vacinadao = new VacinaDao();
+        $usuarios = new UsuarioDao();
 
         $dados['dados_usuarios'] =  $this->consultarDadosUsuarios();
         $dados['nome_vacina'] = $this->consultarVacina();
         $dados['qtdvacinados']  =    $vacinadao->qtdVacinados();
         $dados['qtdvacinadosdia']  = $vacinadao->qtdVacinadosDia();
         $dados['vacinadosposto'] = $vacinadao->vacinadosPosto($_SESSION['local_vacinacao']);
+        $dados['vacinadospostodia'] = $vacinadao->qtdVacinadosDiaPosto($_SESSION['local_vacinacao']);
         $dados['ultimosVacinados'] = $vacinadao->ultimosVacinados();
+        $dados['consultaTodos'] = $usuarios->consultaTodos();   
+
+        if(isset($_POST['pesquisavacinado']) && !empty($_POST['pesquisavacinado'])){
+            $pesquisavacinado = addslashes($_POST['pesquisavacinado']);
+            $dados['ifvacinado'] = $vacinadao->ifvacinado($pesquisavacinado);
+        }
 
         if (isset($_POST['nome']) && !empty($_POST['nome'])) {
             $nome = addslashes($_POST['nome']);
@@ -73,8 +85,7 @@ class homeController extends controller
             $_SESSION['vacina'] = $vacina;
             $campanha =  addslashes($_SESSION['nome_campanha']);
             $localVacinado =  addslashes($_SESSION['local_vacinacao']);
-            $dose =  addslashes($_POST['dose']);
-           
+            $dose =  addslashes($_POST['dose']);          
 
             if ($vacinadao->isvacinado($nome, $vacina, $campanha, $dose, $localVacinado)) {
                 $dados['msg'] = "Esta pessoa já foi vacinada";
@@ -195,9 +206,11 @@ class homeController extends controller
     public function campanha()
     {
         $this->cadastraLocalVacina();
-
         $cadastrar = new CampanhaDao();
-        $dados = array(1 => 'msg');
+        $dados = array(1 => 'msg', 2=> 'todascampanhas',3=>'localvacinacao');
+        $pagina = basename('campanha');
+        $dados['todascampanhas'] = $this->consultarCampanha();
+        $dados['localvacinacao'] = $this->consultarLocalVacina();
 
         if (isset($_POST["NOME_CAMPANHA"]) && !empty($_POST["NOME_CAMPANHA"])) {
             $NOME_CAMPANHA = addslashes($_POST["NOME_CAMPANHA"]);
@@ -285,13 +298,40 @@ class homeController extends controller
             }else{
                 $alterarsenha = new UsuarioDao();
                 if ($alterarsenha->alterarSenha($password)) {
-                    echo $dados['msg'] =   "Senha alterada com sucesso";
+                   $dados['msg'] =   "Senha alterada com sucesso";
                 } else {
-                    echo $dados['msg'] =   "Erro ao Cadastrar";
+                    $dados['msg'] =   "Erro ao Cadastrar";
                 }
-            }
-            
+            }            
         }
         $this->loadTemplate('alterarsenha', $dados);
+    } 
+    public function alterar(){
+            $dados =  array();
+            $pagina = "alterardados";
+            $this->carregaView($pagina, $dados);
+    }
+    public function relatorios(){
+        $dados = array(1 => 'msg');
+
+        if(isset($_POST['password']) && $_POST['password']){
+            $password =  addslashes(MD5($_POST["password"]));
+            $novasenha =  addslashes(MD5($_POST["novasenha"]));    
+
+            if($password !== $novasenha){
+                echo $dados['msg'] = "Senhas diferentes";
+            }else{
+                $alterarsenha = new UsuarioDao();
+                if ($alterarsenha->alterarSenha($password)) {
+                   $dados['msg'] =   "Senha alterada com sucesso";
+                } else {
+                    $dados['msg'] =   "Erro ao Cadastrar";
+                }
+            }            
+        }
+        $pagina = basename('relatorios');
+        $permissao = new permissaoController();
+        $permissao->autenticadoAutorizado($pagina, $_SESSION['nivel']);
+        $this->loadTemplate($pagina, $dados);
     } 
 }

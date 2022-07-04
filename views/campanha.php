@@ -1,37 +1,78 @@
 <?php include_once 'header.php'; ?>
-<div class="container ml-1 px-2 p-3 border">
-<h3>Cadastro de campanhas</h3>
+
+<div class="container ml-1 px-2 p-3 border"  style="margin-top: 70px;">
 <form method="post">
-    <?php if(!empty($msg)) { ?>
+    <input type="hidden" name="novacampanha">
+    <input type="submit" name="novacampanha" class="btn btn-success" value="Nova Campanha">  
+    <input type="hidden" name="novolocal">
+    <input type="submit" name="novolocal" class="btn btn-success" value="Novo Local">      
+</form>
+<?php if(!empty($msg)) { ?>
         <div class="alert alert-danger" role="alert">
         <?php echo $msg; ?>
         </div>
     <?php } ?>
-    <div class="mb-3">
-        <input type="text"  required name="NOME_CAMPANHA"  class="form-control" id="formGroupExampleInput2" placeholder="NOME CAMPANHA E DATA Ex: NOME+ 00/00/0000">
-    </div>
-    <div class="mb-3">
-    <label for="formGroupExample">PERIODO INICIAL</label>
-        <input type="date"  name="PERIODO_INICIAL" class="form-control" id="formGroupExampleInput2" placeholder="PERIODO_INICIAL">
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExample">PERIODO FINAL</label>
-        <input type="date"  name="PERIODO_FINAL" class="form-control" id="formGroupExampleInput2" placeholder="PERIODO_FINAL">
-    </div>   
-    <input type="submit" class="btn btn-primary" value="Cadastrar">
-</form>
-<hr>
-
-<h3 class="mb-1">Cadastro de local de vacinação</h3>
-<form method="post">
-    <?php if(!empty($msg_cadastro)) { ?>
-        <div class="alert alert-danger" role="alert">
-        <?php echo $msg_cadastro; ?>
-        </div>
-    <?php } ?>
-    <div class="mb-3">
-        <input type="text"  required name="localvacinacao" class="form-control" id="formGroupExampleInput2" placeholder="POSTO VACINACAO">
-    </div>     
-    <input type="submit" class="btn btn-primary" value="Cadastrar Posto">
-</form>
+<?php
+    if(isset($_POST['novacampanha']) && !empty($_POST['novacampanha'])):
+        include_once('novacampanha.php');
+    else:?>        
+        <table class="table table-striped">
+                <thead>
+                    <tr scope="row" class="text-center">
+                        <h3>Campanhas cadastradas</h3>
+                    <tr>
+                </thead>
+                <thead>
+                    <th scope="row">CAMPANHA</th>
+                    <th scope="col">PERIODO INICIAL</th>
+                    <th scope="col">PERIODO FINAL</th>
+                    <th scope="col">ACAO</th>
+                </thead>
+                <tbody>
+                    <?php foreach ($todascampanhas as $campanha) : ?>
+                        <tr>
+                            <td scope="row">
+                                <?php echo $campanha['NOME_CAMPANHA']; ?>
+                            </td>
+                            <td scope="row">
+                                <?php echo $campanha['PERIODO_INICIAL']; ?>
+                            </td>
+                            <td scope="row">
+                                <?php echo $campanha['PERIODO_FINAL']; ?>
+                            </td>
+                            <td scope="row">
+                               
+                            </td>
+                        <?php endforeach; ?>
+                        </tr>
+                </tbody>
+            </table>
+    <?php endif;
+    if(isset($_POST['novolocal']) && !empty($_POST['novolocal'])):
+        include_once('novolocal.php');
+    else:?>        
+        <table class="table table-striped">
+                <thead>
+                    <tr scope="row" class="text-center">
+                        <h3>Postos Cadastrados</h3>
+                    <tr>
+                </thead>
+                <thead>
+                    <th scope="row">LOCAL</th>               
+                    <th scope="col">ACAO</th>
+                </thead>
+                <tbody>
+                    <?php foreach ($localvacinacao as $local) : ?>
+                        <tr>
+                            <td scope="row">
+                                <?php echo $local['posto_de_vacinacao']; ?>
+                            </td>                            
+                            <td scope="row">
+                               editar
+                            </td>
+                    <?php endforeach; ?>
+                        </tr>
+                </tbody>
+            </table>
+    <?php endif;?>
 </div>
